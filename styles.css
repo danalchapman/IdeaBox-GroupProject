@@ -31,7 +31,38 @@
   color: #2F304F;
 }
 
-.input-border {
+.input-title-border {
+  width: 330px;
+  border-color: #353567;
+  color: #9798C7;
+}
+
+.input-body-border {
+  width: 330px;
+  border-color: #353567;
+  color: #9798C7;
+}
+
+.save-button {
+  width: 330px;
+  background-color: #363567;
+  color: #E9E9F3;
+}
+
+.search-ideas-container {
+  /* background-color: #E9E9F3; */
+}
+
+.search-image {
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.input-search-border {
+  height: 30px;
+  width: 300px;
   border-color: #353567;
   color: #9798C7;
 }
@@ -40,10 +71,6 @@
   color: #9798C7;
 }
 
-.save-button {
-  background-color: #363567;
-  color: #E9E9F3;
-}
 
 /* Idea Section */
 
@@ -51,4 +78,22 @@
   background-color: #EAEAF4;
   font-family: "Open Sans", sans-serif;
   font-weight: lighter;
+}
+
+.top-bar {
+  background-color: #1F1F3D;
+}
+
+.card-title {
+  color: #1F1F3D;
+  font-weight: bold;
+}
+
+.card-body{
+  color: #1F1F3D;
+}
+
+.comment-bar {
+  background-color: #5356A4;
+  color: #E9E9F3;
 }
