@@ -1,0 +1,54 @@
+
+
+/* Ideas-Menu */
+.ideas-menu {
+  background-color: #1F1F3D;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+.idea-box-header {
+  color: #E9E9F3;
+}
+
+.filter-starred-ideas {
+  color: #BFBFDD;
+}
+
+.show-starred-ideas {
+  background-color: #5356A4;
+  color: #E9E9F3;
+}
+
+/* Main Section */
+.main-section {
+  background-color: #A9AAD2;
+  font-family: "Open Sans", sans-serif;
+  font-weight: lighter;
+}
+
+.title, .body {
+  color: #2F304F;
+}
+
+.input-border {
+  border-color: #353567;
+  color: #9798C7;
+}
+
+::placeholder {
+  color: #9798C7;
+}
+
+.save-button {
+  background-color: #363567;
+  color: #E9E9F3;
+}
+
+/* Idea Section */
+
+.idea-section {
+  background-color: #EAEAF4;
+  font-family: "Open Sans", sans-serif;
+  font-weight: lighter;
+}
