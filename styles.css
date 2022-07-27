@@ -29,15 +29,34 @@
 
 .idea-box-header {
   color: #E9E9F3;
+  padding: 20px 10px;
+  margin: 0;
+  font-size: 18px;
+}
+
+.menu-styling-container {
+  border-top: 1px solid #353567;
+  border-bottom: 1px solid #353567;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 10px;
 }
 
 .filter-starred-ideas {
   color: #BFBFDD;
+  font-size: 14px;
+  font-weight: lighter;
+  margin: 0 0 20px 0;
 }
 
 .show-starred-ideas {
   background-color: #5356A4;
   color: #E9E9F3;
+  font-size: 16px;
+  font-weight: bold;
+  height: 40px;
+  width: 200px;
 }
 
 /* Main Section */
