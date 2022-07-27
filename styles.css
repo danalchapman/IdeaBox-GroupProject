@@ -1,10 +1,30 @@
+.page-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
 
+.main-idea-container {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-left: 0;
+}
 
 /* Ideas-Menu */
 .ideas-menu {
   background-color: #1F1F3D;
   font-family: "Open Sans", sans-serif;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  width: 250px;
 }
 
 .idea-box-header {
@@ -25,6 +45,8 @@
   background-color: #A9AAD2;
   font-family: "Open Sans", sans-serif;
   font-weight: lighter;
+  height: 30%;
+  width: 100%;
 }
 
 .title, .body {
@@ -78,6 +100,11 @@
   background-color: #EAEAF4;
   font-family: "Open Sans", sans-serif;
   font-weight: lighter;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 70%;
+  width: 100%;
 }
 
 .top-bar {
@@ -96,4 +123,19 @@
 .comment-bar {
   background-color: #5356A4;
   color: #E9E9F3;
+}
+
+.star-active {
+  width: 20px;
+  height: 20px;
+}
+
+.delete {
+  width: 20px;
+  height: 20px;
+}
+
+.comment-cross {
+  width: 25px;
+  height: 25px;
 }

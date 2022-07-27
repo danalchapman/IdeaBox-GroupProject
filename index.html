@@ -1,90 +1,95 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="./styles.css">
-        <title>Idea Box</title>
-    </head>
 
-    <body>
-        <nav class="ideas-menu">
-          <h1 class="idea-box-header">IdeaBox</h1>
-          <h2 class="filter-starred-ideas">Filter Starred Ideas</h2>
-          <button class="show-starred-ideas">Show Starred Ideas</button>
-        </nav>
-        <section class="main-section">
-            <h2 class="title">Title</h2>
-            <input class="input-title-border" type="text" name="title-input">
-            <h2 class="body">Body</h2>
-            <input class="input-body-border" type="text" name="body-input">
-            <button class="save-button">Save</button>
-            <div class="search-ideas-container">
-              <img class="search-image" src="./assets/search.svg" alt="magnifying glass">
-              <input class="input-search-border" type="search" name="search-box" placeholder="Search ideas">
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Idea Box</title>
+</head>
+
+<body>
+  <div class="page-container">
+    <nav class="ideas-menu">
+      <h1 class="idea-box-header">IdeaBox</h1>
+      <h2 class="filter-starred-ideas">Filter Starred Ideas</h2>
+      <button class="show-starred-ideas">Show Starred Ideas</button>
+    </nav>
+    <section class="main-idea-container">
+      <section class="main-section">
+        <h2 class="title">Title</h2>
+        <input class="input-title-border" type="text" name="title-input">
+        <h2 class="body">Body</h2>
+        <input class="input-body-border" type="text" name="body-input">
+        <button class="save-button">Save</button>
+        <div class="search-ideas-container">
+          <img class="search-image" src="./assets/search.svg" alt="magnifying glass">
+          <input class="input-search-border" type="search" name="search-box" placeholder="Search ideas">
+        </div>
+      </section>
+      <section class="idea-section">
+        <section class="idea-card">
+          <div class="top-bar">
+            <img class="star-active" src="./assets/star-active.svg" alt="red star">
+            <img class="delete" src="./assets/delete.svg" alt="white x">
+          </div>
+          <h3 class="card-title">Idea Title</h3>
+          <p class="card-body">Idea body.</p>
+          <div class="comment-bar">
+            <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
+            <p class="comment-input">Comment</p>
+          </div>
         </section>
-        <section class="idea-section">
-          <section class="idea-card">
-            <div class="top-bar">
-              <img class="star-active" src="./assets/star-active.svg" alt="red star">
-              <img class="delete" src="./assets/delete.svg" alt="white x">
-            </div>
-            <h3 class="card-title">Idea Title</h3>
-            <p class="card-body">Idea body.</p>
-            <div class="comment-bar">
-              <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
-              <p class="comment-input">Comment</p>
-            </div>
-          </section>
-          <section class="idea-card">
-            <div class="top-bar">
-              <img class="star-active" src="./assets/star-active.svg" alt="red star">
-              <img class="delete" src="./assets/delete.svg" alt="white x">
-            </div>
-            <h3 class="card-title">Idea Title</h3>
-            <p class="card-body">Idea body.</p>
-            <div class="comment-bar">
-              <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
-              <p class="comment-input">Comment</p>
-            </div>
-          </section>
-          <section class="idea-card">
-            <div class="top-bar">
-              <img class="star-active" src="./assets/star-active.svg" alt="red star">
-              <img class="delete" src="./assets/delete.svg" alt="white x">
-            </div>
-            <h3 class="card-title">Idea Title</h3>
-            <p class="card-body">Idea body.</p>
-            <div class="comment-bar">
-              <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
-              <p class="comment-input">Comment</p>
-            </div>
-          </section>
-          <section class="idea-card">
-            <div class="top-bar">
-              <img class="star-active" src="./assets/star-active.svg" alt="red star">
-              <img class="delete" src="./assets/delete.svg" alt="white x">
-            </div>
-            <h3 class="card-title">Idea Title</h3>
-            <p class="card-body">Idea body.</p>
-            <div class="comment-bar">
-              <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
-              <p class="comment-input">Comment</p>
-            </div>
-          </section>
-          <section class="idea-card">
-            <div class="top-bar">
-              <img class="star-active" src="./assets/star-active.svg" alt="red star">
-              <img class="delete" src="./assets/delete.svg" alt="white x">
-            </div>
-            <h3 class="card-title">Idea Title</h3>
-            <p class="card-body">Idea body.</p>
-            <div class="comment-bar">
-              <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
-              <p class="comment-input">Comment</p>
-            </div>
-          </section>
+        <section class="idea-card">
+          <div class="top-bar">
+            <img class="star-active" src="./assets/star-active.svg" alt="red star">
+            <img class="delete" src="./assets/delete.svg" alt="white x">
+          </div>
+          <h3 class="card-title">Idea Title</h3>
+          <p class="card-body">Idea body.</p>
+          <div class="comment-bar">
+            <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
+            <p class="comment-input">Comment</p>
+          </div>
         </section>
-    </body>
+        <section class="idea-card">
+          <div class="top-bar">
+            <img class="star-active" src="./assets/star-active.svg" alt="red star">
+            <img class="delete" src="./assets/delete.svg" alt="white x">
+          </div>
+          <h3 class="card-title">Idea Title</h3>
+          <p class="card-body">Idea body.</p>
+          <div class="comment-bar">
+            <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
+            <p class="comment-input">Comment</p>
+          </div>
+        </section>
+        <section class="idea-card">
+          <div class="top-bar">
+            <img class="star-active" src="./assets/star-active.svg" alt="red star">
+            <img class="delete" src="./assets/delete.svg" alt="white x">
+          </div>
+          <h3 class="card-title">Idea Title</h3>
+          <p class="card-body">Idea body.</p>
+          <div class="comment-bar">
+            <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
+            <p class="comment-input">Comment</p>
+          </div>
+        </section>
+        <section class="idea-card">
+          <div class="top-bar">
+            <img class="star-active" src="./assets/star-active.svg" alt="red star">
+            <img class="delete" src="./assets/delete.svg" alt="white x">
+          </div>
+          <h3 class="card-title">Idea Title</h3>
+          <p class="card-body">Idea body.</p>
+          <div class="comment-bar">
+            <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
+            <p class="comment-input">Comment</p>
+          </div>
+        </section>
+      </section>
+    </section>
+  </div>
+</body>
 </html>
