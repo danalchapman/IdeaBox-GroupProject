@@ -1,8 +1,8 @@
 class Idea {
-    constructor() {
+    constructor(cardTitle, cardBody) {
         this.id = Date.now();
-        this.title = "";
-        this.body = "";
+        this.title = cardTitle;
+        this.body = cardBody;
         this.star = false;
     }
     saveToStorage() {
