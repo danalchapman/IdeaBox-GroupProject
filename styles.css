@@ -144,7 +144,6 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: lighter;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   height: 60%;
   width: 100%;
@@ -166,9 +165,8 @@ body {
   height: 30px;
   background-color: #1F1F3D;
   display: flex;
-  flex-direction: row;
   align-content: flex-end;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 .card-title {
@@ -205,7 +203,6 @@ body {
 .star-active {
   width: 25px;
   height: 25px;
-  margin-right: 78%;
   margin-left: 2px;
 }
 
