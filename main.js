@@ -9,6 +9,7 @@ var ideaCard = document.getElementById("ideaSection");
 
 //event handlers
 saveButton.addEventListener("click", createIdeaCard);
+window.addEventListener("load", enableButton);
 
 //functions
 function createIdeaCard() {
@@ -18,6 +19,7 @@ function createIdeaCard() {
     titleInput.value = "";
     bodyInput.value = "";
 }
+
 function renderCard(id, title, body) {
     ideaCard.innerHTML +=
     `<section class="idea-card" id=${id}>
@@ -32,4 +34,14 @@ function renderCard(id, title, body) {
             <p class="comment-input">Comment</p>
         </div>
     </section>`;
+}
+
+function enableButton() {
+    if (titleInput.value === "" && bodyInput.value === "") {
+        saveButton.disabled = true;
+        saveButton.classList.add("disable-button");
+    } else {
+        saveButton.disabled = false;
+        saveButton.classList.add("save-button");
+    }
 }
