@@ -15,6 +15,8 @@ function createIdeaCard() {
     var newCard = new Idea(titleInput.value, bodyInput.value);
     ideas.push(newCard);
     renderCard(newCard.id, newCard.title, newCard.body);
+    titleInput.value = "";
+    bodyInput.value = "";
 }
 function renderCard(id, title, body) {
     ideaCard.innerHTML +=
