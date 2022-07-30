@@ -19,30 +19,38 @@ ideaSection.addEventListener("click", favoriteCard);
 //functions
 function createIdeaCard() {
     var newCard = new Idea(titleInput.value, bodyInput.value);
-
     ideas.push(newCard);
-    renderCard(newCard.id, newCard.title, newCard.body);
+
+    renderCard();
+
     titleInput.value = "";
     bodyInput.value = "";
 
     enableButton();
 }
 
-function renderCard(id, title, body) {
+function renderCard() {
     //build off of the Array here
-    ideaSection.innerHTML +=
-    `<section class="idea-card">
-        <div class="top-bar">
-            <img class="star-icon" src="./assets/star.svg" alt="red star" id="star-${id}">
-            <img class="delete" src="./assets/delete.svg" alt="white x" id="delete-${id}">
-        </div>
-        <h3 class="card-title">${title}</h3>
-        <p class="card-body">${body}</p>
-        <div class="comment-bar">
-            <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
-            <p class="comment-input">Comment</p>
-        </div>
-    </section>`;
+    ideaSection.innerHTML = "";
+    for (var i = 0; i < ideas.length; i++) {
+        var favorite = "./assets/star.svg";
+        if (ideas[i].star) {
+            favorite = "./assets/star-active.svg";
+        }
+        ideaSection.innerHTML +=
+            `<section class="idea-card">
+            <div class="top-bar">
+                <img class="star-icon" src=${favorite} alt="red star" id="star-${ideas[i].id}">
+                <img class="delete" src="./assets/delete.svg" alt="white x" id="delete-${ideas[i].id}">
+            </div>
+            <h3 class="card-title">${ideas[i].title}</h3>
+            <p class="card-body">${ideas[i].body}</p>
+            <div class="comment-bar">
+                <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
+                <p class="comment-input">Comment</p>
+            </div>
+        </section>`;
+    }
 }
 
 function enableButton() {
@@ -56,31 +64,33 @@ function enableButton() {
 }
 
 function deleteCard(event) {
-    var deleteCardId = event.target.id;   
+    var deleteCardId = event.target.id;
 
-    for(var i=0; i < ideas.length; i++){
-        if(deleteCardId === `delete-${ideas[i].id}`){
+    if (!deleteCardId.includes("delete")) return;
+
+    for (var i = 0; i < ideas.length; i++) {
+        if (deleteCardId === `delete-${ideas[i].id}`) {
             ideas.splice(i, 1);
         }
     }
-
-    if(event.target.classList.contains("delete")){
-        event.target.closest("section").remove();
-    }
+    renderCard();
 }
 
 function favoriteCard(event) {
     var cardId = event.target.id;
 
-    for(var i=0; i < ideas.length; i++){
-        if(cardId === `star-${ideas[i].id}` && !ideas[i].star){
+    if (!cardId.includes("star")) return;
+
+    for (var i = 0; i < ideas.length; i++) {
+        if (cardId === `star-${ideas[i].id}` && !ideas[i].star) {
             ideas[i].star = true;
             event.target.src = "./assets/star-active.svg";
-            event.target.alt = "favorited"
-        } else {
+            event.target.alt = "favorited";
+        } else if (cardId === `star-${ideas[i].id}`) {
             ideas[i].star = false;
             event.target.src = "./assets/star.svg";
-            event.target.alt = "unfavorited"
+            event.target.alt = "unfavorited";
         }
     }
+    renderCard();
 }
