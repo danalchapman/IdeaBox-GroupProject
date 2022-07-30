@@ -9,17 +9,15 @@ var ideaSection = document.getElementById("ideaSection");
 var deleteButton = document.getElementById("deleteButton");
 var starImage = document.querySelector(".star-icon");
 
-//event handlers
-window.addEventListener("load", enableButton);
+//Event Handlers
 saveButton.addEventListener("click", createIdeaCard);
-titleInput.addEventListener("keydown", enableButton);
-bodyInput.addEventListener("keydown", enableButton);
+titleInput.addEventListener("keyup", enableButton);
+bodyInput.addEventListener("keyup", enableButton);
 ideaSection.addEventListener("click", deleteCard);
 ideaSection.addEventListener("click", favoriteCard);
 
 //functions
 function createIdeaCard() {
-    // prevent.default would go here
     var newCard = new Idea(titleInput.value, bodyInput.value);
 
     ideas.push(newCard);
@@ -31,6 +29,7 @@ function createIdeaCard() {
 }
 
 function renderCard(id, title, body) {
+    //build off of the Array here
     ideaSection.innerHTML +=
     `<section class="idea-card">
         <div class="top-bar">
