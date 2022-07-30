@@ -81,10 +81,11 @@ body {
 .body {
   color: #2F304F;
   font-size: 14px;
+  font-weight: bold;
   display: flex;
+  flex-direction: column-reverse;
   align-items: flex-start;
   width: 330px;
-  margin: 0;
 }
 
 .input-title-border {
@@ -153,6 +154,7 @@ body {
   height: 60%;
   width: 100%;
   overflow: scroll;
+  justify-content: space-evenly;
 }
 
 .idea-card {
