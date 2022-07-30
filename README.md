@@ -34,4 +34,5 @@ we agreed that we will assess future cases of getting stuck by making sure we al
 Today we still want to know whether or not we need to implement semantic elements of <forms> to our code, or if our <section> elements are good enough to get the job done. we still have yet to ask for our instructors guidance on what we can do about our white spaces to our <section class="idea section"> elements; do we need to change the size to our idea cards (and going against the project specs?) orrrr?
 
 we still feel confident in our abilities to communicate our problem solving as a team and strive to be better in our communication. we definitely put the team first.
-
+Friday 07/29: We refactored <section class="main-section"> to <form> for accessibility and guideline follow-through. We refactored CSS for the main section form <label> and <input> as well as the card container with `justify-content: space-evenly` for proper spacing of idea cards.
+- On the topic of the fourth bullet point of Iteration 2, we did not trigger the default state of the form button. We are aware of how to `prevent.default()` - we would pass `event` through the function `createIdeaCard` and on the first line following, we would add `event.preventDefault()`.
