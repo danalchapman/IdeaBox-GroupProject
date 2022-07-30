@@ -112,12 +112,7 @@ body {
 }
 
 .disable-button {
-  width: 330px;
-  height: 40px;
   background-color: #5356A4;
-  color: #E9E9F3;
-  font-size: 18px;
-  font-weight: bold;
   cursor: not-allowed;
 }
 

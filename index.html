@@ -15,17 +15,15 @@
         </div>
       </nav>
       <section class="main-idea-container">
-        <section class="main-section">
-          <h2 class="title">Title</h2>
-          <input class="input-title-border" type="text" name="title-input" id="titleInput">
-          <h2 class="body">Body</h2>
-          <input class="input-body-border" type="text" name="body-input" id="bodyInput">
-          <button type="button" class="save-button" id="saveButton">Save</button>
+        <form class="main-section">
+          <label class="title"><input class="input-title-border" type="text" name="title-input" id="titleInput">Title</label>
+          <label class="body"><input class="input-body-border" type="text" name="body-input" id="bodyInput">Body</label>
+          <button action=""  method="get" type="button" class="save-button" id="saveButton" disabled>Save</button>
           <div class="search-ideas-container">
             <img class="search-image" src="./assets/search.svg" alt="magnifying glass">
             <input class="input-search-border" type="search" name="search-box" placeholder=" Search ideas">
           </div>
-        </section>
+        </form>
         <section class="idea-section" id="ideaSection">
           <section class="idea-card">
             <div class="top-bar">
