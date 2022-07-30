@@ -31,10 +31,10 @@ function createIdeaCard() {
 
 function renderCard(id, title, body) {
     ideaSection.innerHTML +=
-    `<section class="idea-card" id=${id}>
+    `<section class="idea-card">
         <div class="top-bar">
             <img class="star-active" src="./assets/star-active.svg" alt="red star">
-            <img class="delete" src="./assets/delete.svg" alt="white x">
+            <img class="delete" src="./assets/delete.svg" alt="white x" id=${id}>
         </div>
         <h3 class="card-title">${title}</h3>
         <p class="card-body">${body}</p>
@@ -56,13 +56,13 @@ function enableButton() {
 }
 
 function deleteCard(event) {
-    console.log(ideas);
+    var cardId = parseInt(event.target.id);    
+
     for(var i=0; i < ideas.length; i++){
-        if(event.target.id === ideas[i].id){
+        if(cardId === ideas[i].id){
             ideas.splice(i, 1);
         }
     }
-    console.log(ideas);
 
     if(event.target.classList.contains("delete")){
         event.target.closest("section").remove();
