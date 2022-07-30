@@ -5,13 +5,16 @@ var ideas = [];
 var saveButton = document.getElementById("saveButton");
 var titleInput = document.getElementById("titleInput");
 var bodyInput = document.getElementById("bodyInput");
-var ideaCard = document.getElementById("ideaSection");
+var ideaSection = document.getElementById("ideaSection");
+var deleteButton = document.getElementById("deleteButton");
 
 //event handlers
-saveButton.addEventListener("click", createIdeaCard);
 window.addEventListener("load", enableButton);
+saveButton.addEventListener("click", createIdeaCard);
 titleInput.addEventListener("keydown", enableButton);
 bodyInput.addEventListener("keydown", enableButton);
+ideaSection.addEventListener("click", deleteCard);
+
 
 //functions
 function createIdeaCard() {
@@ -27,7 +30,7 @@ function createIdeaCard() {
 }
 
 function renderCard(id, title, body) {
-    ideaCard.innerHTML +=
+    ideaSection.innerHTML +=
     `<section class="idea-card" id=${id}>
         <div class="top-bar">
             <img class="star-active" src="./assets/star-active.svg" alt="red star">
@@ -49,5 +52,19 @@ function enableButton() {
     } else {
         saveButton.disabled = false;
         saveButton.classList.remove("disable-button");
+    }
+}
+
+function deleteCard(event) {
+    console.log(ideas);
+    for(var i=0; i < ideas.length; i++){
+        if(event.target.id === ideas[i].id){
+            ideas.splice(i, 1);
+        }
+    }
+    console.log(ideas);
+
+    if(event.target.classList.contains("delete")){
+        event.target.closest("section").remove();
     }
 }
