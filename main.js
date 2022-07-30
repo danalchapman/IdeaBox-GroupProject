@@ -9,15 +9,23 @@ var ideaCard = document.getElementById("ideaSection");
 
 //event handlers
 saveButton.addEventListener("click", createIdeaCard);
+window.addEventListener("load", enableButton);
+titleInput.addEventListener("keydown", enableButton);
+bodyInput.addEventListener("keydown", enableButton);
 
 //functions
 function createIdeaCard() {
+    // prevent.default would go here
     var newCard = new Idea(titleInput.value, bodyInput.value);
+
     ideas.push(newCard);
     renderCard(newCard.id, newCard.title, newCard.body);
     titleInput.value = "";
     bodyInput.value = "";
+
+    enableButton();
 }
+
 function renderCard(id, title, body) {
     ideaCard.innerHTML +=
     `<section class="idea-card" id=${id}>
@@ -32,4 +40,14 @@ function renderCard(id, title, body) {
             <p class="comment-input">Comment</p>
         </div>
     </section>`;
+}
+
+function enableButton() {
+    if (titleInput.value === "" || bodyInput.value === "") {
+        saveButton.disabled = true;
+        saveButton.classList.add("disable-button");
+    } else {
+        saveButton.disabled = false;
+        saveButton.classList.remove("disable-button");
+    }
 }
