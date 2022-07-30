@@ -14,7 +14,7 @@ saveButton.addEventListener("click", createIdeaCard);
 titleInput.addEventListener("keydown", enableButton);
 bodyInput.addEventListener("keydown", enableButton);
 ideaSection.addEventListener("click", deleteCard);
-
+ideaSection.addEventListener("click", favoriteCard);
 
 //functions
 function createIdeaCard() {
@@ -33,7 +33,8 @@ function renderCard(id, title, body) {
     ideaSection.innerHTML +=
     `<section class="idea-card">
         <div class="top-bar">
-            <img class="star-active" src="./assets/star-active.svg" alt="red star">
+            <img class="star" src="./assets/star.svg" alt="red star" id=${id}>
+            <img class="star-active" src="./assets/star-active.svg" alt="red star" id=${id}>
             <img class="delete" src="./assets/delete.svg" alt="white x" id=${id}>
         </div>
         <h3 class="card-title">${title}</h3>
@@ -56,15 +57,33 @@ function enableButton() {
 }
 
 function deleteCard(event) {
-    var cardId = parseInt(event.target.id);    
+    var cardId = parseInt(event.target.id);   
 
     for(var i=0; i < ideas.length; i++){
-        if(cardId === ideas[i].id){
+        if(cardId === ideas[i].id && event.target.classList.contains("delete")){
             ideas.splice(i, 1);
         }
     }
 
     if(event.target.classList.contains("delete")){
         event.target.closest("section").remove();
+    }
+}
+
+function favoriteCard(event) {
+    var cardId = parseInt(event.target.id);
+    
+
+    for(var i=0; ideas.length; i++){
+        if( cardId === ideas[i].id && ideas[i].star === false){
+            ideas[i].star = true;
+            event.target.classList("star").style.display = "none";
+            event.target.classList("star-active").style.display = "block";
+        } else {
+            console.log(ideas[i].star)
+            ideas[i].star = false;
+            document.querySelector(".star-active").style.display = "none";
+            document.querySelector(".star").display = "block";
+        }
     }
 }
