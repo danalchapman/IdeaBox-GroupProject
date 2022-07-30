@@ -207,18 +207,22 @@ body {
   margin: 5px 0 0 0;
 }
 
-.star {
-  display: block;
+.star-icon {
+  /* display: block; */
   width: 25px;
   height: 25px;
   margin-left: 2px;
 }
 
 .star-active {
-  display: none;
+  /* display: none; */
   width: 25px;
   height: 25px;
   margin-left: 2px;
+}
+
+.hidden {
+  display: none!important;
 }
 
 .delete {

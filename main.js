@@ -7,6 +7,7 @@ var titleInput = document.getElementById("titleInput");
 var bodyInput = document.getElementById("bodyInput");
 var ideaSection = document.getElementById("ideaSection");
 var deleteButton = document.getElementById("deleteButton");
+var starImage = document.querySelector(".star-icon");
 
 //event handlers
 window.addEventListener("load", enableButton);
@@ -33,9 +34,8 @@ function renderCard(id, title, body) {
     ideaSection.innerHTML +=
     `<section class="idea-card">
         <div class="top-bar">
-            <img class="star" src="./assets/star.svg" alt="red star" id=${id}>
-            <img class="star-active" src="./assets/star-active.svg" alt="red star" id=${id}>
-            <img class="delete" src="./assets/delete.svg" alt="white x" id=${id}>
+            <img class="star-icon" src="./assets/star.svg" alt="red star" id="star-${id}">
+            <img class="delete" src="./assets/delete.svg" alt="white x" id="delete-${id}">
         </div>
         <h3 class="card-title">${title}</h3>
         <p class="card-body">${body}</p>
@@ -57,10 +57,10 @@ function enableButton() {
 }
 
 function deleteCard(event) {
-    var cardId = parseInt(event.target.id);   
+    var deleteCardId = event.target.id;   
 
     for(var i=0; i < ideas.length; i++){
-        if(cardId === ideas[i].id && event.target.classList.contains("delete")){
+        if(deleteCardId === `delete-${ideas[i].id}`){
             ideas.splice(i, 1);
         }
     }
@@ -71,19 +71,17 @@ function deleteCard(event) {
 }
 
 function favoriteCard(event) {
-    var cardId = parseInt(event.target.id);
-    
+    var cardId = event.target.id;
 
-    for(var i=0; ideas.length; i++){
-        if( cardId === ideas[i].id && ideas[i].star === false){
+    for(var i=0; i < ideas.length; i++){
+        if(cardId === `star-${ideas[i].id}` && !ideas[i].star){
             ideas[i].star = true;
-            event.target.classList("star").style.display = "none";
-            event.target.classList("star-active").style.display = "block";
+            event.target.src = "./assets/star-active.svg";
+            event.target.alt = "favorited"
         } else {
-            console.log(ideas[i].star)
             ideas[i].star = false;
-            document.querySelector(".star-active").style.display = "none";
-            document.querySelector(".star").display = "block";
+            event.target.src = "./assets/star.svg";
+            event.target.alt = "unfavorited"
         }
     }
 }
