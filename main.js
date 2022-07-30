@@ -5,17 +5,19 @@ var ideas = [];
 var saveButton = document.getElementById("saveButton");
 var titleInput = document.getElementById("titleInput");
 var bodyInput = document.getElementById("bodyInput");
-var ideaCard = document.getElementById("ideaSection");
+var ideaSection = document.getElementById("ideaSection");
+var deleteButton = document.getElementById("deleteButton");
+var starImage = document.querySelector(".star-icon");
 
-//event handlers
+//Event Handlers
 saveButton.addEventListener("click", createIdeaCard);
-window.addEventListener("load", enableButton);
-titleInput.addEventListener("keydown", enableButton);
-bodyInput.addEventListener("keydown", enableButton);
+titleInput.addEventListener("keyup", enableButton);
+bodyInput.addEventListener("keyup", enableButton);
+ideaSection.addEventListener("click", deleteCard);
+ideaSection.addEventListener("click", favoriteCard);
 
 //functions
 function createIdeaCard() {
-    // prevent.default would go here
     var newCard = new Idea(titleInput.value, bodyInput.value);
 
     ideas.push(newCard);
@@ -27,11 +29,12 @@ function createIdeaCard() {
 }
 
 function renderCard(id, title, body) {
-    ideaCard.innerHTML +=
-    `<section class="idea-card" id=${id}>
+    //build off of the Array here
+    ideaSection.innerHTML +=
+    `<section class="idea-card">
         <div class="top-bar">
-            <img class="star-active" src="./assets/star-active.svg" alt="red star">
-            <img class="delete" src="./assets/delete.svg" alt="white x">
+            <img class="star-icon" src="./assets/star.svg" alt="red star" id="star-${id}">
+            <img class="delete" src="./assets/delete.svg" alt="white x" id="delete-${id}">
         </div>
         <h3 class="card-title">${title}</h3>
         <p class="card-body">${body}</p>
@@ -49,5 +52,35 @@ function enableButton() {
     } else {
         saveButton.disabled = false;
         saveButton.classList.remove("disable-button");
+    }
+}
+
+function deleteCard(event) {
+    var deleteCardId = event.target.id;   
+
+    for(var i=0; i < ideas.length; i++){
+        if(deleteCardId === `delete-${ideas[i].id}`){
+            ideas.splice(i, 1);
+        }
+    }
+
+    if(event.target.classList.contains("delete")){
+        event.target.closest("section").remove();
+    }
+}
+
+function favoriteCard(event) {
+    var cardId = event.target.id;
+
+    for(var i=0; i < ideas.length; i++){
+        if(cardId === `star-${ideas[i].id}` && !ideas[i].star){
+            ideas[i].star = true;
+            event.target.src = "./assets/star-active.svg";
+            event.target.alt = "favorited"
+        } else {
+            ideas[i].star = false;
+            event.target.src = "./assets/star.svg";
+            event.target.alt = "unfavorited"
+        }
     }
 }
