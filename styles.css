@@ -105,8 +105,9 @@ body {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+  margin-left: 6px;
   height: 40px;
-  width: 330px;
+  width: 335px;
 }
 
 .disable-button {
@@ -124,6 +125,7 @@ body {
   background-color: #363567;
   cursor: not-allowed;
   padding: 6px 6px 9px 6px;
+  margin: 0px -4.5px 0px 7px;
   height: 25px;
   width: 25px;
 }
@@ -132,7 +134,7 @@ body {
   color: #9798C7;
   border: 1px solid #545457;
   height: 40px;
-  width: 300px;
+  width: 303px;
 }
 
 ::placeholder {

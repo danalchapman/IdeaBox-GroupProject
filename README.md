@@ -22,6 +22,7 @@
 4. From there, you can favorite your idea by clicking the `star` icon in the top left corner, or delete your idea by clicking the `x` in the top right corner.
 
 ### End of Day Retros
+- [Norming Document](https://docs.google.com/document/d/1UttTUx3zhpV8U_HjoPpFCG5bD5uQUUiAaoo7N7qsHFg/edit)
 - **Monday 07/25**: Went over our HTML and how it was implemented, points where we could refactor and went over naming conventions for classes and ids.
 - **Tuesday 07/26**: Started our CSS file and creating rules based on class-name selectors, starting with containers and working inward.
 - **Wednesday 07/27**: Finished the CSS file with flex-box elements, did some experimenting with overflow at the bottom of the page and ultimately added a scroll wheel to the idea-card section. Will continue to refactor and play with options when JS functionality is complete. Started implementing Solo Project Common Feedback into our project, refactoring as needed and as we notice where we can improve. Also completed Iteration 1, creating the idea.js and main.js files.
@@ -47,12 +48,9 @@
 - `README.md` organized and marked up for empathetic purposes.
 
 ### LINKEDIN PROFILES
-- R. Dani Lopez-Cruz
-(https://www.linkedin.com/in/roberto-lopez-cruz-84a03989/)
-- Dana Chapman
-(https://www.linkedin.com/in/danalchapman/)
-- Andrew Knapick
-(https://www.linkedin.com/in/andrew-knapick-29171369/)
+- [Roberto Dani Lopez-Cruz](https://www.linkedin.com/in/roberto-lopez-cruz-84a03989/)
+- [Dana Chapman](https://www.linkedin.com/in/danalchapman/)
+- [Andrew Knapick](https://www.linkedin.com/in/andrew-knapick-29171369/)
 
 ### Original Comp
 ![Idea Box Web Page](https://frontend.turing.edu/projects/module-1/assets/ideabox-group/desktop.jpg)
