@@ -1,7 +1,7 @@
-// Global Variables
+//we need ideas array
 var ideas = [];
 
-// Selectors
+//id selectors
 var saveButton = document.getElementById("saveButton");
 var titleInput = document.getElementById("titleInput");
 var bodyInput = document.getElementById("bodyInput");
@@ -9,14 +9,14 @@ var ideaSection = document.getElementById("ideaSection");
 var deleteButton = document.getElementById("deleteButton");
 var starImage = document.querySelector(".star-icon");
 
-// Event Handlers
+//Event Handlers
 saveButton.addEventListener("click", createIdeaCard);
 titleInput.addEventListener("keyup", enableButton);
 bodyInput.addEventListener("keyup", enableButton);
 ideaSection.addEventListener("click", deleteCard);
 ideaSection.addEventListener("click", favoriteCard);
 
-// Functions
+//functions
 function createIdeaCard() {
     var newCard = new Idea(titleInput.value, bodyInput.value);
     ideas.push(newCard);
@@ -29,20 +29,28 @@ function createIdeaCard() {
     enableButton();
 }
 
-function renderCard(id, title, body) {
-    ideaSection.innerHTML +=
-    `<section class="idea-card">
-        <div class="top-bar">
-            <img class="star-icon" src="./assets/star.svg" alt="red star" id="star-${id}">
-            <img class="delete" src="./assets/delete.svg" alt="white x" id="delete-${id}">
-        </div>
-        <h3 class="card-title">${title}</h3>
-        <p class="card-body">${body}</p>
-        <div class="comment-bar">
-            <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
-            <p class="comment-input">Comment</p>
-        </div>
-    </section>`;
+function renderCard() {
+    //build off of the Array here
+    ideaSection.innerHTML = "";
+    for (var i = 0; i < ideas.length; i++) {
+        var favorite = "./assets/star.svg";
+        if (ideas[i].star) {
+            favorite = "./assets/star-active.svg";
+        }
+        ideaSection.innerHTML +=
+            `<section class="idea-card">
+            <div class="top-bar">
+                <img class="star-icon" src=${favorite} alt="red star" id="star-${ideas[i].id}">
+                <img class="delete" src="./assets/delete.svg" alt="white x" id="delete-${ideas[i].id}">
+            </div>
+            <h3 class="card-title">${ideas[i].title}</h3>
+            <p class="card-body">${ideas[i].body}</p>
+            <div class="comment-bar">
+                <img class="comment-cross" src="./assets/comment.svg" alt="plus sign">
+                <p class="comment-input">Comment</p>
+            </div>
+        </section>`;
+    }
 }
 
 function enableButton() {
