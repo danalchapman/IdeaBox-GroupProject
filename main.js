@@ -19,9 +19,10 @@ ideaSection.addEventListener("click", favoriteCard);
 // Functions
 function createIdeaCard() {
     var newCard = new Idea(titleInput.value, bodyInput.value);
-
     ideas.push(newCard);
-    renderCard(newCard.id, newCard.title, newCard.body);
+
+    renderCard();
+
     titleInput.value = "";
     bodyInput.value = "";
 
@@ -55,31 +56,33 @@ function enableButton() {
 }
 
 function deleteCard(event) {
-    var deleteCardId = event.target.id;   
+    var deleteCardId = event.target.id;
 
-    for(var i=0; i < ideas.length; i++){
-        if(deleteCardId === `delete-${ideas[i].id}`){
+    if (!deleteCardId.includes("delete")) return;
+
+    for (var i = 0; i < ideas.length; i++) {
+        if (deleteCardId === `delete-${ideas[i].id}`) {
             ideas.splice(i, 1);
         }
     }
-
-    if(event.target.classList.contains("delete")){
-        event.target.closest("section").remove();
-    }
+    renderCard();
 }
 
 function favoriteCard(event) {
     var cardId = event.target.id;
 
-    for(var i=0; i < ideas.length; i++){
-        if(cardId === `star-${ideas[i].id}` && !ideas[i].star){
+    if (!cardId.includes("star")) return;
+
+    for (var i = 0; i < ideas.length; i++) {
+        if (cardId === `star-${ideas[i].id}` && !ideas[i].star) {
             ideas[i].star = true;
             event.target.src = "./assets/star-active.svg";
-            event.target.alt = "favorited"
-        } else {
+            event.target.alt = "favorited";
+        } else if (cardId === `star-${ideas[i].id}`) {
             ideas[i].star = false;
             event.target.src = "./assets/star.svg";
-            event.target.alt = "unfavorited"
+            event.target.alt = "unfavorited";
         }
     }
+    renderCard();
 }
