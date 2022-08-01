@@ -1,7 +1,7 @@
-//we need ideas array
+// Global Variables
 var ideas = [];
 
-//id selectors
+// Selectors
 var saveButton = document.getElementById("saveButton");
 var titleInput = document.getElementById("titleInput");
 var bodyInput = document.getElementById("bodyInput");
@@ -9,14 +9,14 @@ var ideaSection = document.getElementById("ideaSection");
 var deleteButton = document.getElementById("deleteButton");
 var starImage = document.querySelector(".star-icon");
 
-//Event Handlers
+// Event Handlers
 saveButton.addEventListener("click", createIdeaCard);
 titleInput.addEventListener("keyup", enableButton);
 bodyInput.addEventListener("keyup", enableButton);
 ideaSection.addEventListener("click", deleteCard);
 ideaSection.addEventListener("click", favoriteCard);
 
-//functions
+// Functions
 function createIdeaCard() {
     var newCard = new Idea(titleInput.value, bodyInput.value);
 
@@ -29,7 +29,6 @@ function createIdeaCard() {
 }
 
 function renderCard(id, title, body) {
-    //build off of the Array here
     ideaSection.innerHTML +=
     `<section class="idea-card">
         <div class="top-bar">

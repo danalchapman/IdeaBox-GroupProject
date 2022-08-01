@@ -1,4 +1,4 @@
-/* Body Adjustments */
+/* Parent Containers */
 body {
   margin: 0;
 }
@@ -144,7 +144,6 @@ body {
 
 
 /* Idea Section */
-
 .idea-section {
   background-color: #EAEAF4;
   font-family: "Open Sans", sans-serif;
@@ -208,14 +207,12 @@ body {
 }
 
 .star-icon {
-  /* display: block; */
   width: 25px;
   height: 25px;
   margin-left: 2px;
 }
 
 .star-active {
-  /* display: none; */
   width: 25px;
   height: 25px;
   margin-left: 2px;
