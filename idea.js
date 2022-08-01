@@ -5,12 +5,15 @@ class Idea {
         this.body = cardBody;
         this.star = false;
     }
+    
     saveToStorage() {
 
     }
+
     deleteFromStorage() {
 
     }
+
     updateIdea() {
         
     }

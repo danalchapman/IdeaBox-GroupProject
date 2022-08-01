@@ -1,7 +1,7 @@
-//we need ideas array
+//Global Variables
 var ideas = [];
 
-//id selectors
+//Id Selectors
 var saveButton = document.getElementById("saveButton");
 var titleInput = document.getElementById("titleInput");
 var bodyInput = document.getElementById("bodyInput");
@@ -16,7 +16,7 @@ bodyInput.addEventListener("keyup", enableButton);
 ideaSection.addEventListener("click", deleteCard);
 ideaSection.addEventListener("click", favoriteCard);
 
-//functions
+//Functions
 function createIdeaCard() {
     var newCard = new Idea(titleInput.value, bodyInput.value);
     ideas.push(newCard);
@@ -30,13 +30,15 @@ function createIdeaCard() {
 }
 
 function renderCard() {
-    //build off of the Array here
     ideaSection.innerHTML = "";
+
     for (var i = 0; i < ideas.length; i++) {
         var favorite = "./assets/star.svg";
+
         if (ideas[i].star) {
             favorite = "./assets/star-active.svg";
         }
+
         ideaSection.innerHTML +=
             `<section class="idea-card">
             <div class="top-bar">
@@ -73,6 +75,7 @@ function deleteCard(event) {
             ideas.splice(i, 1);
         }
     }
+    
     renderCard();
 }
 
@@ -84,13 +87,16 @@ function favoriteCard(event) {
     for (var i = 0; i < ideas.length; i++) {
         if (cardId === `star-${ideas[i].id}` && !ideas[i].star) {
             ideas[i].star = true;
+
             event.target.src = "./assets/star-active.svg";
             event.target.alt = "favorited";
         } else if (cardId === `star-${ideas[i].id}`) {
             ideas[i].star = false;
+
             event.target.src = "./assets/star.svg";
             event.target.alt = "unfavorited";
         }
     }
+
     renderCard();
 }
